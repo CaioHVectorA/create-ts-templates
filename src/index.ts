@@ -4,5 +4,5 @@ import { config } from './config'
 
 const PORT = 3000 
 
-const app = config(express())
+export const app = config(express())
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`))
