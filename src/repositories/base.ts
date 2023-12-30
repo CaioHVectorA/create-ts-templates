@@ -1,8 +1,7 @@
 import { PrismaClient } from "@prisma/client"
-console.log(process.env.NODE_ENV)
+import { DB, TEST_DB } from "../config/env"
+import { prisma } from "../prisma"
 export abstract class BaseRepository {
-    prisma = new PrismaClient({
-        datasourceUrl: process.env.NODE_ENV === 'test' ? 'file:./test.db' : 'file:./dev.db'
-    })
+    db = prisma
     constructor(){}
 }
